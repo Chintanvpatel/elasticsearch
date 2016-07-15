@@ -45,6 +45,8 @@ COPY config ./config
 
 COPY docker-entrypoint.sh /
 
+RUN chmod +x ./docker-entrypoint.sh
+
 EXPOSE 9200 9300
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["elasticsearch", "-Des.network.host=0.0.0.0"]
