@@ -1,6 +1,6 @@
 FROM elasticsearch:latest
 
-RUN /usr/share/elasticsearch/bin/plugin -i lmenezes/elasticsearch-kopf/2.1.1
+RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/master
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["elasticsearch"]
