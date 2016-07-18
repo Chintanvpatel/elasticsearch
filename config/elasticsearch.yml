@@ -1,1 +1,13 @@
+cluster:
+  name: quantumsearch.qdata.io
+  
 network.host: 0.0.0.0
+
+discovery:
+  type: ec2
+
+  ec2:
+    groups: quantumSearch-v2
+    
+index:
+  number_of_shards: 3
