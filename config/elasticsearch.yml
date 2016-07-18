@@ -1,13 +1,8 @@
-cluster:
-  name: Wrecker
-  
+cluster.name: Wreker
 network.host: 0.0.0.0
-
-discovery:
-  type: ec2
-
-  ec2:
-    groups: quantumSearch-v2
-    
-index:
-  number_of_shards: 3
+plugin.mandatory: cloud-aws
+cloud.aws.access_key: ${ACCESS_KEY}
+cloud.aws.secret_key: ${SECRET_KEY}
+discovery.type: ec2
+discovery.zen.ping.multicast.enabled: false
+discovery.ec2.groups: quantumSearch-v2
