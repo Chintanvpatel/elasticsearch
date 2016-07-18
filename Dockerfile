@@ -43,6 +43,9 @@ RUN set -ex \
 
 COPY config ./config
 
+RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.0
+RUN /usr/share/elasticsearch/bin/plugin install cloud-aws
+
 COPY docker-entrypoint.sh /
 
 RUN chmod +x /docker-entrypoint.sh
