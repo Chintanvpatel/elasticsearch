@@ -1,5 +1,5 @@
 cluster:
-  name: quantumsearch.qdata.io
+  name: Wrecker
   
 network.host: 0.0.0.0
 
