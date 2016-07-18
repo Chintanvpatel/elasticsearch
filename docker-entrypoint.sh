@@ -17,6 +17,10 @@ if [ "$1" = 'elasticsearch' -a "$(id -u)" = '0' ]; then
 	#exec gosu elasticsearch "$BASH_SOURCE" "$@"
 fi
 
+# ECS will report the docker interface without help, so we override that with host's private ip
+AWS_PRIVATE_IP=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
+set -- "$@" --network.publish_host=$AWS_PRIVATE_IP
+
 # As argument is not related to elasticsearch,
 # then assume that user wants to run his own process,
 # for example a `bash` shell to explore this image
