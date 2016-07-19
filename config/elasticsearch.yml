@@ -6,3 +6,4 @@ cloud.aws.secret_key: ${SECRET_KEY}
 discovery.type: ec2
 discovery.zen.ping.multicast.enabled: false
 discovery.ec2.groups: quantumSearch-v2
+discovery.zen.minimum_master_nodes: 1
